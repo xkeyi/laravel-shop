@@ -13,4 +13,4 @@
 
 Route::get('/', 'PagesController@root')->name('root');
 
-Auth::routes(); // Illuminate\Routing\Router
+Auth::routes(['verify' => true]); // Illuminate\Routing\Router
