@@ -14,3 +14,9 @@
 Route::get('/', 'PagesController@root')->name('root');
 
 Auth::routes(['verify' => true]); // Illuminate\Routing\Router
+
+Route::group([
+    'middleware' => ['auth', 'verified'],
+], function () {
+    Route::resource('user_addresses', 'UserAddressesController');
+});
