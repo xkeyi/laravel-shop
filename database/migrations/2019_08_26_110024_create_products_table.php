@@ -21,7 +21,7 @@ class CreateProductsTable extends Migration
             $table->boolean('on_sale')->default(true);
             $table->float('rating')->default(5);
             $table->unsignedInteger('sold_count')->default(0);
-            $table->unsignedInteger('vies_count')->default(0);
+            $table->unsignedInteger('review_count')->default(0);
             $table->decimal('price', 10, 2); // 商品最低价
             $table->timestamps();
         });
