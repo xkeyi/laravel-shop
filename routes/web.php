@@ -24,4 +24,5 @@ Route::group([
 
     Route::post('products/{product}/favorite', 'ProductsController@favor')->name('products.favor');
     Route::delete('products/{product}/favorite', 'ProductsController@disfavor')->name('products.disfavor');
+    Route::get('favorites', 'ProductsController@favorites')->name('products.favorites');
 });
