@@ -37,4 +37,11 @@ class AddCartRequest extends Request
             'amount' => '商品数量'
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'sku_id.required' => '请选择商品'
+        ];
+    }
 }
