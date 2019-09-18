@@ -86,7 +86,7 @@ class Order extends Model
         return $this->hasMany(OrderItem::class);
     }
 
-    public function findAvailableNo()
+    public static function findAvailableNo()
     {
         // 订单流水号前缀
         $prefix = date('YmdHis');

@@ -13,7 +13,7 @@ class CreateOrdetItemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('ordet_items', function (Blueprint $table) {
+        Schema::create('order_items', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('order_id');
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
