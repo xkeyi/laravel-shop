@@ -86,4 +86,14 @@ class OrdersController extends Controller
 
         return view('orders.index', compact('orders'));
     }
+
+    public function show(Order $order)
+    {
+        $this->authorize('own', $order);
+
+        // load() 是在已经查询出来的模型上调用，而 with() 则是在 ORM 查询构造器上调用
+        $order->load(['items.product', 'items.productSku']);
+
+        return view('orders.show', compact('order'));
+    }
 }

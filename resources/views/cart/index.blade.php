@@ -157,7 +157,8 @@
             .then(function (response) {
                 swal('订单提交成功', '', 'success')
                     .then(function() {
-                        location.href = "{{ route('orders.index') }}";
+                        // location.href = "{{ route('orders.index') }}";
+                        location.href = '/orders/' + response.data.id;
                     });
             }, function (error) {
                 if (error.reqponse.status === 422) {
