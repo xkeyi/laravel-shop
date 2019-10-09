@@ -11,6 +11,7 @@ use Carbon\Carbon;
 use App\Exceptions\InvalidRequestException;
 use App\Jobs\CloseOrder;
 use App\Services\CartService;
+use App\Services\OrderService;
 
 class OrdersController extends Controller
 {
