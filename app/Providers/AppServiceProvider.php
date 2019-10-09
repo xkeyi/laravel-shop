@@ -17,7 +17,7 @@ class AppServiceProvider extends ServiceProvider
     {
         // 往服务器中注入一个名为 alipay 的单利对象
         $this->app->singleton('alipay', function () {
-            $config = config('apy.alipay');
+            $config = config('pay.alipay');
             // 判断当前项目运行环境是否为线上环境
             if (app()->environment() !== 'production') {
                 $config['mode'] = 'dev';
