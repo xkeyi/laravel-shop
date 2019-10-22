@@ -40,6 +40,8 @@ Route::group([
 
     Route::get('payment/{order}/alipay', 'PaymentController@payByAlipay')->name('payment.alipay');
     Route::get('payment/alipay/return', 'PaymentController@alipayReturn')->name('payment.alipay.return');
+
+    Route::get('coupon_codes/{code}', 'CouponCodesController@show')->name('coupon_codes.show');
 });
 
 // 支付服务器端的回调不能放在用户登录认证的路由里面哦
