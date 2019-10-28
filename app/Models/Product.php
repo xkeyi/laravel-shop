@@ -16,6 +16,11 @@ class Product extends Model
         'on_sale' => 'boolean',
     ];
 
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
     public function skus()
     {
         return $this->hasMany(ProductSku::class);
