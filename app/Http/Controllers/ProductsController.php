@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Exceptions\InvalidRequestException;
 use App\Models\OrderItem;
+use App\Models\Category;
 
 class ProductsController extends Controller
 {
@@ -30,6 +31,20 @@ class ProductsController extends Controller
             /** $builder->where() 传入一个匿名函数，然后才在这个匿名函数里面再去添加 like 搜索，这样做目的是在查询条件的两边加上 ()，也就是说最终执行的 SQL 语句类似 select * from products where on_sale = 1 and ( title like xxx or description like xxx ) */
         }
 
+        // 如果传入 category_id 字段，并且在数据库中有对应的类目
+        if ($request->input('category_id') && $category = Category::find($request->input('category_id'))) {
+            // 如果这是一个父类目
+            if ($category->is_directory) {
+                // 筛选出该父类目下所有子类目的商品
+                $builder->whereHas('category', function ($query) use ($category) {
+                    $query->where('path', 'like', $category->path.$category->id.'-%');
+                });
+            } else {
+                // 不父类目，直接筛选出此类目下的商品
+                $builder->where('category_id', $category->id);
+            }
+        }
+
         // order 参数用来控制商品的排序规则
         if ($order = $request->input('order', '')) {
             // 是否是以 _asc 或者 _desc 结尾
@@ -49,7 +64,9 @@ class ProductsController extends Controller
             'order' => $order,
         ];
 
-        return view('products.index', compact('products', 'filters'));
+        $category = $category ?? null;
+
+        return view('products.index', compact('products', 'filters', 'category'));
     }
 
     public function show(Product $product, Request $request)
