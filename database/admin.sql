@@ -21,7 +21,7 @@
 
 LOCK TABLES `admin_menu` WRITE;
 /*!40000 ALTER TABLE `admin_menu` DISABLE KEYS */;
-INSERT INTO `admin_menu` VALUES (1,0,1,'首页','fa-bar-chart','/',NULL,NULL,'2019-08-22 15:29:47'),(2,0,7,'系统管理','fa-tasks',NULL,NULL,NULL,'2019-10-28 14:22:56'),(3,2,8,'管理员','fa-users','auth/users',NULL,NULL,'2019-10-28 14:22:56'),(4,2,9,'角色','fa-user','auth/roles',NULL,NULL,'2019-10-28 14:22:56'),(5,2,10,'权限','fa-ban','auth/permissions',NULL,NULL,'2019-10-28 14:22:56'),(6,2,11,'菜单','fa-bars','auth/menu',NULL,NULL,'2019-10-28 14:22:56'),(7,2,12,'操作日志','fa-history','auth/logs',NULL,NULL,'2019-10-28 14:22:56'),(8,0,2,'用户管理','fa-users','/users',NULL,'2019-08-22 15:47:30','2019-08-22 15:47:35'),(9,0,4,'商品管理','fa-cubes','/products',NULL,'2019-08-26 13:14:19','2019-10-28 14:22:56'),(10,0,5,'订单管理','fa-rmb','/orders',NULL,'2019-10-11 15:43:03','2019-10-28 14:22:56'),(11,0,6,'优惠券管理','fa-tags','/coupon_codes',NULL,'2019-10-21 15:45:30','2019-10-28 14:22:56'),(12,0,3,'类目管理','fa-bars','/categories',NULL,'2019-10-28 14:22:51','2019-10-28 14:22:56');
+INSERT INTO `admin_menu` VALUES (1,0,1,'首页','fa-bar-chart','/',NULL,NULL,'2019-08-22 15:29:47'),(2,0,9,'系统管理','fa-tasks',NULL,NULL,NULL,'2019-10-30 13:35:34'),(3,2,10,'管理员','fa-users','auth/users',NULL,NULL,'2019-10-30 13:35:34'),(4,2,11,'角色','fa-user','auth/roles',NULL,NULL,'2019-10-30 13:35:34'),(5,2,12,'权限','fa-ban','auth/permissions',NULL,NULL,'2019-10-30 13:35:34'),(6,2,13,'菜单','fa-bars','auth/menu',NULL,NULL,'2019-10-30 13:35:34'),(7,2,14,'操作日志','fa-history','auth/logs',NULL,NULL,'2019-10-30 13:35:34'),(8,0,2,'用户管理','fa-users','/users',NULL,'2019-08-22 15:47:30','2019-08-22 15:47:35'),(9,0,4,'商品管理','fa-cubes','/products',NULL,'2019-08-26 13:14:19','2019-10-28 14:22:56'),(10,0,7,'订单管理','fa-rmb','/orders',NULL,'2019-10-11 15:43:03','2019-10-30 13:35:34'),(11,0,8,'优惠券管理','fa-tags','/coupon_codes',NULL,'2019-10-21 15:45:30','2019-10-30 13:35:34'),(12,0,3,'类目管理','fa-bars','/categories',NULL,'2019-10-28 14:22:51','2019-10-28 14:22:56'),(13,9,6,'众筹商品','fa-flag-checkered','/crowdfunding_products',NULL,'2019-10-30 13:34:47','2019-10-30 13:36:04'),(14,9,5,'普通商品','fa-cubes','/products',NULL,'2019-10-30 13:35:28','2019-10-30 13:36:04');
 /*!40000 ALTER TABLE `admin_menu` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -103,4 +103,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-28  6:28:25
+-- Dump completed on 2019-10-30  5:50:53
