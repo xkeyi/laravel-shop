@@ -16,6 +16,7 @@ use App\Http\Requests\SendReviewRequest;
 use App\Events\OrderReviewed;
 use App\Http\Requests\ApplyRefundRequest;
 use App\Models\CouponCode;
+use App\Http\Requests\CrowdFundingOrderRequest;
 
 class OrdersController extends Controller
 {
@@ -162,5 +163,15 @@ class OrdersController extends Controller
         ]);
 
         return $order;
+    }
+
+    public function crowdfunding(CrowdFundingOrderRequest $request, OrderService $orderService)
+    {
+        $user = $request->user();
+        $sku = ProductSku::find($request->input('sku_id'));
+        $address = UserAddress::find($request->input('address_id'));
+        $amount = $request->input('amount');
+
+        return $orderService->crowdfunding($user, $address, $sku, $amount);
     }
 }
