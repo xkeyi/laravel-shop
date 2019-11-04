@@ -7,7 +7,7 @@ use App\Events\OrderPaid;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class UpdateCrowdfundingProductProgess implements ShouldQueue
+class UpdateCrowdfundingProductProgress implements ShouldQueue
 {
 
     public function handle(OrderPaid $event)
