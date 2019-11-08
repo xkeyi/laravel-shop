@@ -48,10 +48,13 @@ Route::group([
 
     Route::get('installments', 'InstallmentsController@index')->name('installments.index');
     Route::get('installments/{installment}', 'InstallmentsController@show')->name('installments.show');
+    Route::get('installments/{installment}/alipay', 'InstallmentsController@payByAlipay')->name('installments.alipay');
+    Route::get('installments/alipay/return', 'InstallmentsController@alipayReturn')->name('installments.alipay.return');
 });
 
 // 支付服务器端的回调不能放在用户登录认证的路由里面哦
 Route::post('payment/alipay/notify', 'PaymentController@alipayNotify')->name('payment.alipay.notify');
+Route::post('installments/alipay/notify', 'InstallmentsController@alipayNotify')->name('installments.alipay.notify');
 
 // 支付宝支付测试路由
 Route::get('alipay', function () {
