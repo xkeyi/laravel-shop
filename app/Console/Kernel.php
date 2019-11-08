@@ -29,6 +29,9 @@ class Kernel extends ConsoleKernel
 
         // 结束众筹，每分钟执行一次
         $schedule->command('cron:finish-crowdfunding')->everyMinute();
+
+        // 计算逾期费，每天凌晨 00:00 执行
+        $schedule->command('cron:calculate-installment-fine')->daily();
     }
 
     /**
